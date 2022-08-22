@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+
+    display: grid;
+    place-items: center;
+}
+
+.container{
+    width: 900px;
+}
+
+.carousel{
+    position: relative;
+}
+
+.carousel-inner{
+    background: #f4f4f4;
+}
+.carousel-item{
+    text-align: center;
+    padding: 100px;
+
+    display: none;
+}
+
+.user{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.jobtitle{
+    letter-spacing: 2px;
+}
+
+.contact-btn{
+    background: steelblue;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 10px 15px;
+}
+
+
+.carousel-indicators{
+    width: 100%;
+    text-align: center;
+    background: none;
+    padding: 20px;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.dot{
+    width: 8px;
+    height: 8px;
+    background: #bbb;
+    border-radius: 50%;
+    list-style: none;
+    display: inline-block;
+    margin: 0 1px;
+    
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+}
+
+.dot:hover,.dot.active{
+    background-color: #888;
+}
+
+
+.carousel-control-prev,.carousel-control-next{
+    color: #bbb;
+    font-size: 25px;
+    /* background: green; */
+    padding: 20px;
+
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+.carousel-control-prev{
+    left: 0;
+}
+.carousel-control-next{
+    right: 0;
+}
+
+.carousel-control-prev:hover{
+    color: #888;
+    
+    animation: forleft .5s infinite alternate;
+}
+.carousel-control-next:hover{
+    color: #888;
+
+    animation-name: forright;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes forleft{
+    from{
+        left: 0;
+        opacity: 0.5;
+    }
+    to{
+        left: 10px;
+        opacity: 1;
+    }
+}
+
+@keyframes forright{
+    from{
+        right: 0;
+        opacity: 0.5;
+    }
+    to{
+        right: 10px;
+        opacity: 1;
+    }
+}

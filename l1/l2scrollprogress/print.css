@@ -1,0 +1,28 @@
+body{
+    color: blue;
+}
+
+.print-btn{
+    display: none;
+}
+
+.pagebreak{
+    page-break-after: always;
+}
+
+header{
+    position: static;
+
+    -webkit-print-color-adjust: exact;
+}
+
+.content{
+    -webkit-print-color-adjust: exact;
+
+    padding: 0;
+}
+
+@page{
+    size: A4;
+    margin: 0;
+}

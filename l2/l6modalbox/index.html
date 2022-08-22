@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modal Box (2)</title>
+        <link href="./style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+
+        <div class="container">
+            <h2>Login Form</h2>
+            <button type="button" id="btn-modal" class="btn">Login</button>
+        </div>
+
+        <!-- start modal area -->
+        <!-- start login area -->
+        <div id="loginmodal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="btn-close">&times;</button>
+                        <img src="./avatar.png" alt="" class="avatar">
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="" autocomplete="off">
+                            
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Enter username" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" required />
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn">Login</button>
+                            </div>
+
+                            <label>
+                                <input type="checkbox" name="rememberme" id="rememberme" class="checkbox" /> Remember Me
+                            </label>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <span>Forgot <a href="javascript:void(0);">password?</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end login area -->
+        <!-- end modal area -->
+
+        <script src="./app.js" type="text/javascript"></script>
+    </body>
+</html>

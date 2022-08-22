@@ -1,0 +1,80 @@
+body{
+    background: #f4f4f4;
+    font-size: 20px;
+    line-height: 40px;
+
+    margin: 0;
+    padding: 0;
+}
+header{
+    width: 100%;
+    /* background: #f1f1f1; */
+    background: skyblue;
+    text-align: center;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.progress{
+    width: 100%;
+    height: 5px;
+    background: #bbb;
+}
+.progress-bar{
+    width: 0%;
+    height: 100%;
+    background: forestgreen;
+}
+
+
+.content{
+    width: 80%;
+    /* background: #f1f1f1; */
+    /* background: red; */
+    background: linear-gradient(red,yellow);
+    padding: 100px 0;
+    margin: 0 auto;
+}
+
+
+
+/* @media print{
+    *{
+        visibility: hidden;
+    }
+
+    .printarea *{
+        visibility: visible;
+    }
+
+    header{
+        position: static;
+    }
+
+    .content{
+        padding: 0;
+    }
+
+
+    .pagebreak{
+        page-break-before: always;
+        page-break-after: always;
+    }
+} */
+
+
+/* @page{
+    size: portrait;
+    size: landscape;
+
+    size: A4;
+    size: A4 landscape;
+
+    size: legal protrait;
+
+
+    margin: 0;
+} */
+
