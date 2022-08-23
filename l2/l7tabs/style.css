@@ -40,7 +40,7 @@ body{
 }
 
 .tab-content{
-    color: red;
+    background: #ccc;
 }
 
 .tab-pane{

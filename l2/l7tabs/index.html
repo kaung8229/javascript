@@ -10,10 +10,18 @@
             <h2>Tabs</h2>
 
             <ul class="nav">
-                <li class="nav-item"><button type="button" class="tablinks active">Home</button></li>
-                <li class="nav-item"><button type="button" class="tablinks">Profile</button></li>
-                <li class="nav-item"><button type="button" class="tablinks">Contact</button></li>
-                <li class="nav-item"><button type="button" class="tablinks">Settings</button></li>
+                <li class="nav-item">
+                    <button type="button" id="autoclick" class="tablinks" onclick="gettab(event,'home')">Home</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="tablinks" onclick="gettab(event,'profile')">Profile</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="tablinks" onclick="gettab(event,'contact')">Contact</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="tablinks" onclick="gettab(event,'settings')">Settings</button>
+                </li>
             </ul>
 
             <div class="tab-content">
