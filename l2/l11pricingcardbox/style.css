@@ -1,0 +1,170 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --colr1: linear-gradient(to right, steelblue,skyblue);
+    --colr2: linear-gradient(to top,steelblue,skyblue);
+    --colr3: linear-gradient(to left,steelblue,skyblue);
+}
+body{
+    height: 100vh;
+
+    display: grid;
+    place-items: center;
+}
+.title{
+    margin-bottom: 40px;
+}
+.title h3{
+    font-size: 40px;
+    font-weight: 300;
+    margin: 0 0 13px;
+    text-align: center;
+}
+
+.toggle-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle-container > *{
+    margin: 0 3px;
+}
+
+.toggle-checkbox{
+    visibility: hidden;
+}
+
+.toggle-checkbox:checked + .toggle-label{
+    background: steelblue;
+}
+
+.toggle-label{
+    width: 40px;
+    height: 20px;
+    background: #bbb;
+    border-radius: 20px;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+
+    position: relative;
+}
+
+.toggle-label .ball{
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 2.5px;
+    left: 2px;
+
+    animation: offani .3s linear;
+}
+
+.toggle-checkbox:checked + .toggle-label .ball{
+    animation: onani .3s linear forwards;
+}
+
+@keyframes onani{
+    0%{
+        transform: translate(0px) scale(1);
+    }
+    50%{
+        transform: translate(10px) scale(1.2);
+    }
+    100%{
+        transform: translate(20px) scale(1);
+    }
+}
+
+@keyframes offani{
+    0%{
+        transform: translate(20px) scale(1);
+    }
+    50%{
+        transform: translate(10px) scale(1.2);
+    }
+    100%{
+        transform: translate(0px) scale(1);
+    }
+}
+
+
+.price-container{
+    display: flex;
+    align-items: center;
+}
+
+.price-box{
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    background: #fff;
+}
+.price-box p{
+    font-size: 20px;
+    padding: 20px;
+    background: steelblue;
+}
+.price-box h3 span{
+    font-size: 30px;
+
+    vertical-align: middle;
+}
+.price-box h3 span:nth-of-type(2){
+    font-size: 50px;
+}
+
+.price-list .list-group{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+.price-list .list-group li{
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+.price-list .list-group li:first-child{
+    border-top: 1px solid #eee;
+}
+
+.price-list .btn{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 18px 45px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 20px;
+    
+    transition: 0.3s;
+}
+
+.price-list .btn:hover{
+    font-size: 20px;
+}
+
+
+.box{
+    padding: 20px 0;
+    color: #fff;
+}
+
+.box1,.btn1{
+    background: var(--colr1);
+}
+.box2,.btn2{
+    background: var(--colr2);
+}
+.box3,.btn3{
+    background: var(--colr3);
+}
+
+
+.price-box:nth-of-type(2){
+    transform: scale(1.1);
+}

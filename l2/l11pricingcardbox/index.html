@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo List (JS)</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link href="./style.css" rel="stylesheet" type="text/css" />
+
+    </head>
+    <body>
+
+        <div class="container">
+
+            <div class="title">
+                <h3>Our Pricing</h3>
+                <div class="toggle-container">
+                    <p>Monthly</p>
+
+                    <input type="checkbox" name="toggle-checkbox" id="toggle-checkbox" class="toggle-checkbox">
+                    <label for="toggle-checkbox" id="toggle-label" class="toggle-label"><div class="ball"></div></label>
+                    
+                    <p>Yearly</p>
+                </div>
+            </div>
+
+            <div class="price-container">
+
+                <div class="price-box">
+                    <div class="box box1">
+                        <p>Basic</p>
+                        <h3><span>$ </span><span id="basic">10</span></h3>
+                    </div>
+                    <div class="price-list">
+
+                        <ul class="list-group">
+                            <li>Single Domain</li>
+                            <li>Unlimited Bandwidth</li>
+                            <li>500GB Storage</li>
+                            <li>10 Email Accounts</li>
+                            <li>2 Database (MySQL)</li>
+                        </ul>
+
+                        <a href="javascript:void(0);" class="btn btn1">Subscribe</a>
+
+                    </div>
+                </div>
+
+                <div class="price-box">
+                    <div class="box box2">
+                        <p>Professional</p>
+                        <h3><span>$ </span><span id="professional">20</span></h3>
+                    </div>
+                    <div class="price-list">
+
+                        <ul class="list-group">
+                            <li>Unlimited Domain</li>
+                            <li>Unlimited Bandwidth</li>
+                            <li>1TB Storage</li>
+                            <li>50 Email Accounts</li>
+                            <li>10 Database (MySQL)</li>
+                        </ul>
+
+                        <a href="javascript:void(0);" class="btn btn2">Subscribe</a>
+
+                    </div>
+                </div>
+
+                <div class="price-box">
+                    <div class="box box3">
+                        <p>Master</p>
+                        <h3><span>$ </span><span id="master">30</span></h3>
+                    </div>
+                    <div class="price-list">
+
+                        <ul class="list-group">
+                            <li>Unlimited Domain</li>
+                            <li>Unlimited Bandwidth</li>
+                            <li>Unlimited Storage</li>
+                            <li>Unlimited Email Accounts</li>
+                            <li>Unlimited Database (MySQL)</li>
+                        </ul>
+
+                        <a href="javascript:void(0);" class="btn btn3">Subscribe</a>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <script src="./app.js" type="text/javascript"></script>
+    </body>
+</html>
