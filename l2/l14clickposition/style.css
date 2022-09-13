@@ -1,0 +1,115 @@
+:root{
+    --smallcolor: #f8f8f8;
+    --mediumcolor: #f4f4f4;
+    --largecolor: #f1f1f1;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    background: #444;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    overflow: hidden;
+}
+
+.container h3{
+    color: #fff;
+    text-align: center;
+}
+
+.map-container{
+    width: 1200px;
+    height: 600px;
+    border: 1px solid #fff;
+
+    background-image: url('./map.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.map-container .circle{
+    width: 30px;
+    height: 30px;
+    background: var(--smallcolor);
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%) scale(0);
+
+    animation-name: small;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+.map-container .circle::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--mediumcolor);
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%) scale(0);
+
+    animation-name: medium;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+.map-container .circle::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--largecolor);
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%) scale(0);
+
+    animation-name: large;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes small{
+    to{
+        transform: translate(-50%,-50%) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes medium{
+    to{
+        transform: translate(-50%,-50%) scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes large{
+    to{
+        transform: translate(-50%,-50%) scale(3);
+        opacity: 0;
+    }
+}
