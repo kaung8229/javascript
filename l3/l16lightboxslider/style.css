@@ -1,0 +1,146 @@
+:root{
+    --smallcolor: #f8f8f8;
+    --mediumcolor: #f4f4f4;
+    --largecolor: #f1f1f1;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+
+    display: grid;
+    place-items: center;
+}
+
+.container{
+    width: 30%;
+    height: 450px;
+    border: 1px solid #ccc;
+
+    overflow-y: scroll;
+}
+
+.navbar{
+    background: steelblue;
+    padding: 10px;
+    color: #fff;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row .img{
+    width: 50%;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+.row .img:hover{
+    opacity: 0.8;
+}
+
+
+.modal{
+    width: 100%;
+    height: 100%;
+    background: #000;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    padding-top: 100px;
+
+    z-index: 10;
+
+    display: none;
+}
+.modal-content{
+    width: 40%;
+    /* background: #fff; */
+    margin: 0 auto;
+
+    position: relative;
+}
+.btn-close{
+    color: #aaa;
+    font-size: 40px;
+    font-weight: bold;
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    cursor: pointer;
+
+    transition: color .2s;
+}
+.btn-close:hover{
+    color: #fff;
+}
+.modal-content .viewbox img{
+    width: 100%;
+    object-fit: cover;
+}
+.caption-container{
+    width: 100%;
+    color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.prev,.next{
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+
+    padding: 10px;
+    background: rgba(0,0,0,0.2);
+
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+.prev{
+    left: 0;
+}
+.next{
+    right: 0;
+}
+.prev:hover,.next:hover{
+    background: rgba(0,0,0,0.5);
+}
+
+
+.row .col{
+    width: 10%;
+}
+.row .col img{
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.row .col .noactive{
+    opacity: 0.7;
+}
+.row .col .noactive:hover,.noactive.active{
+    opacity: 1;
+}
