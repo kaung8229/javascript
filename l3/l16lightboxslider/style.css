@@ -90,6 +90,9 @@ body{
 .btn-close:hover{
     color: #fff;
 }
+.modal-content .viewbox{
+    display: none;
+}
 .modal-content .viewbox img{
     width: 100%;
     object-fit: cover;
@@ -137,10 +140,12 @@ body{
     width: 100%;
     object-fit: cover;
     cursor: pointer;
+    opacity: 0.5;
 }
-.row .col .noactive{
-    opacity: 0.7;
+.row .col img.noactive{
+    /* opacity: 1; */
 }
-.row .col .noactive:hover,.noactive.active{
+.row .col img.noactive:hover,img.noactive.active{
     opacity: 1;
+    border: 2px solid red;
 }
