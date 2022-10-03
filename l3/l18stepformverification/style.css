@@ -1,0 +1,92 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    background: #777;
+
+    display: grid;
+    place-items: center;
+}
+
+.container{
+    width: 600px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+
+    display: flex;
+}
+
+.dotbox{
+    width: 10%;
+}
+
+.dot{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #bbb;
+    display: block;
+    opacity: .5;
+
+    margin: 10px auto;
+}
+
+.dot.active{
+    opacity: 1;
+}
+
+#form{
+    width: 90%;
+    border-left: 1px solid #eee;
+    padding: 30px;
+}
+
+.page{
+    display: none;
+}
+
+h1{
+    text-align: center;
+}
+
+input{
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    outline: none;
+}
+
+input.invalid{
+    border: 1px solid red;
+}
+
+.d-flex{
+    display: flex;
+    justify-content: end;
+}
+
+.btn{
+    background: steelblue;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    font-size: 15px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    opacity: 0.8;
+}
+
+#prev-btn{
+    background: #999;
+}
