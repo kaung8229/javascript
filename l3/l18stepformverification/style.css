@@ -24,6 +24,7 @@ body{
 
 .dotbox{
     width: 10%;
+    padding-top: 10px;
 }
 
 .dot{
@@ -39,6 +40,9 @@ body{
 
 .dot.active{
     opacity: 1;
+}
+.dot.done{
+    background-color: green;
 }
 
 #form{
@@ -87,6 +91,6 @@ input.invalid{
     opacity: 0.8;
 }
 
-#prev-btn{
+#prevbtn{
     background: #999;
 }
