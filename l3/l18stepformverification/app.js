@@ -6,6 +6,12 @@ var getform = document.getElementById('form');
 var getprevbtn = document.getElementById('prevbtn');
 var getnextbtn = document.getElementById('nextbtn');
 
+var getresultcontainer = document.querySelector('.result-container');
+
+var objkeys = ['email','password','firstname','lastname','dob','phone','address'];
+
+var datas = [];
+
 
 var curridx = 0;
 
@@ -92,12 +98,36 @@ function gonow(num){
         // console.log(curridx);
 
         if(curridx >= getpages.length){
-            getform.submit();
+            // getform.submit();
+
+            getform.style.display = 'none';
+            getresultcontainer.style.display = 'block';
+
+
+            resultdt(datas);
+
+            return false;
         }
 
         showpage(curridx);
     
 }
+
+function* genfun(){
+    var index = 0;
+
+    while(index < objkeys.length){
+
+        yield index++;
+
+    }
+}
+
+// console.log(genfun().next().value);
+let gen = genfun();
+
+// console.log(gen.next().value);
+// console.log(gen.next().value);
 
 function formvalidation(){
     var valid = true;
@@ -112,6 +142,39 @@ function formvalidation(){
         if(getcurrinput[x].value == ''){
             getcurrinput[x].classList.add('invalid');
             valid = false;
+        }else{
+
+            // console.log(getcurrinput[x].value);
+            // console.log(objkeys[x]);
+            // console.log('x value is = ',x);
+
+            // console.log('gen value is ',gen.next().value);
+
+            // method1
+            // const keys = objkeys[gen.next().value];
+            // // console.log(keys);
+            // const values = getcurrinput[x].value;
+            // const obj = {
+            //     [keys]:values
+            // }
+            // datas.push(obj);
+
+
+            // method2
+            // const keys = objkeys[gen.next().value];
+            // const values = getcurrinput[x].value;
+            // var obj = {};
+            // obj[keys] = values;
+            // datas.push(obj);
+
+
+            // method3
+            const keys = objkeys[gen.next().value];
+            const values = getcurrinput[x].value;
+            datas.push({[keys]:values});
+
+
+
         }
 
     }
@@ -123,4 +186,26 @@ function formvalidation(){
     // console.log(valid);
 
     return valid;
+}
+
+
+function resultdt(data){
+    // console.log(data);
+
+    getresultcontainer.innerHTML = `
+        <ul>
+            <li>Name: ${data[2].firstname} ${data[3].lastname}</li>
+            <li>Email: ${data[0].email}</li>
+            <li>Date Of Birth: ${data[4].dob}</li>
+            <li>Phone: ${data[5].phone}</li>
+            <li>Address: ${data[6].address}</li>
+        </ul>
+
+        <button type="submit" class="submit-btn" onclick="submitbtn();">Apply Now</button>
+    `
+    
+}
+
+function submitbtn(){
+    getform.submit();
 }

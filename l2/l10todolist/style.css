@@ -81,7 +81,8 @@ small{
     font-style: italic;
     text-decoration: line-through;
 
-    pointer-events: none;
+    /* pointer-events: none; */
+    cursor: default;
 }
 .list-group li.done::after{
     content: "\f00c";

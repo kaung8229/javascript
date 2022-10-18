@@ -94,3 +94,25 @@ input.invalid{
 #prevbtn{
     background: #999;
 }
+
+
+.result-container{
+    display: none;
+
+    width: 90%;
+}
+
+.result-container ul li{
+    list-style: none;
+    padding: 20px;
+}
+
+.submit-btn{
+    width: 100%;
+    background: steelblue;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
