@@ -18,19 +18,109 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Bold text" onclick="boldfun();">Bold</button>
-                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Italic text" onclick="italicfun();">Italic</button>
-                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Underline text" onclick="underlinefun();">Underline</button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Bold text" data-command="bold">
+                        Bold
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Italic text" data-command="italic">
+                        Italic
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Underline text" data-command="underline">
+                        Underline
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="LineThrough text" data-command="strikeThrough">
+                        LineThrough
+                    </button>
 
-                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Align left" onclick="lalgfun();"><i class="fas fa-align-left"></i></button>
-                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Align center" onclick="calgfun();"><i class="fas fa-align-center"></i></button>
-                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Align right" onclick="ralgfun();"><i class="fas fa-align-right"></i></button>
+                    <!-- Align -->
+                    <button type="button" class="btn btn-outline-secondary rounded-0 ms-4" title="Align left" data-command="justifyLeft">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Align center" data-command="justifyCenter">
+                        <i class="fas fa-align-center"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Align right" data-command="justifyRight">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Justify Align" data-command="justifyFull">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                    <!-- Align -->
 
-                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Uppercase Text" onclick="upcasefun();">Upper Case</button>
-                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Lowercase Text" onclick="lowcasefun();">Lower Case</button>
-                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Capitalize Text" onclick="capcasefun();">Capitalize Case</button>
+                    <!-- Case -->
+                    <button type="button" class="btn btn-outline-secondary rounded-0 ms-4" title="Uppercase Text">
+                        Upper Case
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Lowercase Text">
+                        Lower Case
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Capitalize Text">
+                        Capitalize Case
+                    </button>
+                    <!-- Case -->
 
-                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Clear Text" onclick="clearfun();">Clear</button>
+                    <!-- ol & ul -->
+                    <button type="button" class="btn btn-outline-secondary rounded-0 ms-4" title="Order List" data-command="insertOrderedList">
+                        <i class="fas fa-list-ol"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Unorder List" data-command="insertUnorderedList">
+                        <i class="fas fa-list-ul"></i>
+                    </button>
+                    <!-- ol & ul -->
+
+                    
+                    <button type="button" class="btn btn-outline-secondary rounded-0 ms-4" title="Select All" data-command="selectAll">
+                        <i class="fas fa-check"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0 me-4" title="Backspace" data-command="delete">
+                        <i class="fas fa-backspace"></i>
+                    </button>
+
+                    
+                    <!-- Copy, Paste & Cut -->
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Copy" data-command="copy">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Cut" data-command="cut">
+                        <i class="fas fa-cut"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Paste" data-command="paste">
+                        <i class="fas fa-paste"></i>
+                    </button>
+                    <!-- Copy, Paste & Cut -->
+                    
+                    <!-- redo & undo -->
+                    <button type="button" class="btn btn-outline-secondary rounded-0 ms-4" title="Redo" data-command="redo">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Undo" data-command="undo">
+                        <i class="fas fa-undo"></i>
+                    </button>
+                    <!-- redo & undo -->
+
+                    <!-- link & unlink -->
+                    <button type="button" class="btn btn-outline-secondary rounded-0 ms-4" title="Link" data-command="createLink">
+                        <i class="fas fa-link"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Unlink" data-command="unlink">
+                        <i class="fas fa-unlink"></i>
+                    </button>
+                    <!-- link & unlink -->
+                    
+                    <button type="button" class="btn btn-outline-secondary rounded-0 ms-4" title="Image" data-command="insertImage">
+                        <i class="fas fa-image"></i>
+                    </button>
+
+                    <select name="txtcolors" id="txtcolors" class="btn btn-outline-secondary rounded-0" data-command="foreColor">
+                        <option value="black">Black</option>
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="blue">Blue</option>
+                    </select>
+
+                    
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Clear Text" data-command="cleartxt">
+                        Clear
+                    </button>
                 </div>
             </div>
 
@@ -39,7 +129,12 @@
                 <div class="col-md-12">
                     <form action="" method="">
                         <div class="form-group">
-                            <textarea name="arti" id="textarea" class="form-control" rows="10" placeholder="Write Something..."></textarea>
+                            <!-- <textarea name="arti" id="textarea" class="form-control" rows="10" placeholder="Write Something..."></textarea> -->
+
+                            <!-- <div id="divarea" class="divarea" contenteditable="true" spellcheck="false"></div> -->
+
+                            <div id="divarea" class="divarea"></div>
+
                         </div>
 
                         <div class="text-end">

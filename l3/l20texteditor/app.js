@@ -1,4 +1,46 @@
 var gettext = document.getElementById('textarea');
+var getdivarea = document.getElementById('divarea');
+
+getdivarea.contentEditable = true;
+getdivarea.spellcheck = false;
+
+
+var getbtns = document.querySelectorAll('.btn');
+// console.log(getbtns); // NodeList
+
+getbtns.forEach(function(getbtn){
+    getbtn.addEventListener('click',function(){
+        // console.log(getbtn.title);
+        
+        // var getcommand = getbtn.getAttribute('data-command');
+        var getcommand = getbtn.dataset['command'];
+        // console.log(getcommand);
+
+        if(getcommand == 'cleartxt'){
+            getdivarea.innerHTML = '';
+        }else if(getcommand == 'createLink' || getcommand == 'insertImage'){
+                                // message             default value
+            let geturl = prompt('Enter website link','https://');
+            document.execCommand(getcommand,false,geturl);
+        }else if(getcommand == 'foreColor'){
+            document.execCommand(getcommand,false,getbtn.value);
+        }else if(getcommand == 'paste'){
+            navigator.clipboard.readText().then(function(cliptxt){
+                // console.log(cliptxt);
+                getdivarea.innerHTML += cliptxt;
+            })
+        }else{
+            document.execCommand(getcommand,false,null);
+        }
+
+        
+
+    })
+})
+
+
+
+
 
 function boldfun(){
     gettext.style.fontWeight = 'bold';
@@ -43,3 +85,7 @@ function clearfun(){
     gettext.style.textAlign = 'left';
     gettext.value = '';
 }
+
+
+
+// document.execCommand(aCommandName,aShowDefaultUI,aValueArgument);
