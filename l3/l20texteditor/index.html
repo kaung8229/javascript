@@ -58,21 +58,35 @@
                     </button>
                     <!-- Case -->
 
+                    <button type="button" class="btn btn-outline-secondary rounded-0 ms-4" title="subscript" data-command="subscript">
+                        <i class="fas fa-subscript"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="superscript" data-command="superscript">
+                        <i class="fas fa-superscript"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="superscript" data-command="insertHorizontalRule">
+                        <i class="fas fa-ruler"></i>
+                    </button>
+
                     <!-- ol & ul -->
                     <button type="button" class="btn btn-outline-secondary rounded-0 ms-4" title="Order List" data-command="insertOrderedList">
                         <i class="fas fa-list-ol"></i>
                     </button>
-                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Unorder List" data-command="insertUnorderedList">
+                    <button type="button" class="btn btn-outline-secondary rounded-0 me-4" title="Unorder List" data-command="insertUnorderedList">
                         <i class="fas fa-list-ul"></i>
                     </button>
                     <!-- ol & ul -->
 
                     
-                    <button type="button" class="btn btn-outline-secondary rounded-0 ms-4" title="Select All" data-command="selectAll">
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Select All" data-command="selectAll">
                         <i class="fas fa-check"></i>
                     </button>
-                    <button type="button" class="btn btn-outline-secondary rounded-0 me-4" title="Backspace" data-command="delete">
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Backspace" data-command="delete">
                         <i class="fas fa-backspace"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary rounded-0 me-4" title="forwardDelete" data-command="forwardDelete">
+                        <i class="fas fa-trash-alt"></i>
                     </button>
 
                     
@@ -111,16 +125,39 @@
                     </button>
 
                     <select name="txtcolors" id="txtcolors" class="btn btn-outline-secondary rounded-0" data-command="foreColor">
+                        <option selected disabled>Choose color</option>
                         <option value="black">Black</option>
+                        <option value="white">White</option>
                         <option value="red">Red</option>
                         <option value="green">Green</option>
                         <option value="blue">Blue</option>
                     </select>
 
+                    <select name="bgcolors" id="bgcolors" class="btn btn-outline-secondary rounded-0" data-command="backColor">
+                        <option selected disabled>Choose bg color</option>
+                        <option value="black">Black</option>
+                        <option value="white">White</option>
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="blue">Blue</option>
+                    </select>
+
+                    <select name="fntname" id="fntname" class="btn btn-outline-secondary rounded-0" data-command="fontName">
+                        <option selected disabled>Choose font style</option>
+                        <option value="arial">arial</option>
+                        <option value="century">century</option>
+                        <option value="sans-serif">sans-serif</option>
+                        <option value="time new romen">time new romen</option>
+                    </select>
+
                     
+                    <button type="button" class="btn btn-outline-secondary rounded-0" title="Remove Format" data-command="removeFormat">
+                        Remove Format
+                    </button>
                     <button type="button" class="btn btn-outline-secondary rounded-0" title="Clear Text" data-command="cleartxt">
                         Clear
                     </button>
+
                 </div>
             </div>
 
