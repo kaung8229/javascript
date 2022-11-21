@@ -19,9 +19,83 @@ body{
 
     position: absolute;
 
+    z-index: 100;
+
     cursor: move;
 }
 #boxtitle{
     padding: 10px;
     white-space: nowrap;
+
+    user-select: none;
+}
+
+.btns{
+    /* width: 2rem;
+    height: 2rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+}
+
+.btn-icon{
+    width: 60px;
+    height: 60px;
+    background: #d918b9;
+    color: #fff;
+    font-size: 1.5rem;
+    
+    display: grid;
+    place-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform:  translate(-50%,-50%);
+
+    cursor: pointer;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: all 0.3s;
+}
+
+.btns.show .btn-icon{
+    visibility: visible;
+    opacity: 1;
+}
+
+.btns.show .btn-icon:nth-of-type(1){
+    background: darkblue;
+    left: 50%;
+    top: -80px;
+
+    transform: translateX(-50%);
+}
+
+.btns.show .btn-icon:nth-of-type(2){
+    background: skyblue;
+    left: 120%;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+.btns.show .btn-icon:nth-of-type(3){
+    background: darkgreen;
+    left: 50%;
+    top: 55px;
+
+    transform: translateX(-50%);
+}
+
+.btns.show .btn-icon:nth-of-type(4){
+    left: -100%;
+    top: 50%;
+
+    transform: translateY(-50%);
 }
