@@ -93,3 +93,9 @@ function clearfun(){
 
 
 // document.execCommand(aCommandName,aShowDefaultUI,aValueArgument);
+
+
+                            // Boolen                Null
+// execCommand(aCommandName,aShowDefaultUI,aValueArgument);
+
+// aShowDefaultUI = true,false;
