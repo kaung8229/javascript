@@ -50,9 +50,13 @@ body{
     cursor: pointer;
 }
 
-.fullscreen{
+#openfullscreen,#closefullscreen{
     margin: 0 10px;
     cursor: pointer;
+}
+
+.closefullscreen{
+    display: none;
 }
 
 .ctrl-btn .fa-play{
