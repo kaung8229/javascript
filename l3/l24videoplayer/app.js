@@ -6,7 +6,9 @@ const prevbtn = document.getElementById('prev');
 const nextbtn = document.getElementById('next');
 const stopbtn = document.getElementById('stop');
 
-const progress = document.getElementById('progress');
+// for range
+// const progress = document.getElementById('progress');
+
 const getdisplaytime = document.getElementById('display-time');
 const getfullscreen = document.getElementById('fullscreen');
 
@@ -14,6 +16,12 @@ const getcontainer = document.querySelector('.container');
 
 const getopenfullscreen = document.querySelector('.openfullscreen');
 const getclosefullscreen = document.querySelector('.closefullscreen');
+
+// for progress container
+const getprogressctn = document.querySelector('.progress-container');
+const progress = document.getElementById('progress');
+
+const title = document.getElementById('title');
 
 
 const videos = ['samplevideo1','samplevideo2'];
@@ -24,6 +32,8 @@ loadvideo(videos[curridx]);
 
 function loadvideo(vdo){
     getvideoscreen.src = `./source/${vdo}.mp4`;
+
+    title.textContent = vdo;
 }
 
 
@@ -84,7 +94,32 @@ function previousvdo(){
 }
 
 
-function updateprogress(){
+function updateprogress(e){
+
+    // Method 2 m1
+    // console.log(e.target);
+    // console.log(e.srcElement);
+    // console.log(this)
+
+    // const currentTime = e.target.currentTime;
+    // const duration = e.target.duration;
+    // console.log(currentTime,duration);
+
+    // M2
+    // const {currentTime} = e.target;
+    // const {duration} = e.target;
+    // console.log(currentTime,duration);
+
+
+    // Method 2 m3
+    // const {currentTime,duration} = e.target
+    // console.log(currentTime,duration);
+
+    // Method 2 m4 
+    const [currentTime,duration] = [e.target.currentTime,e.srcElement.duration]
+    // console.log(currentTime,duration);
+
+
     // console.log('hey');
 
     // currentTime,duration keywords come from video api
@@ -93,7 +128,26 @@ function updateprogress(){
 
     // console.log((getvideoscreen.currentTime / getvideoscreen.duration) * 100);
 
-    progress.value = (getvideoscreen.currentTime / getvideoscreen.duration) * 100;
+    // FOR RANGE
+    // if(getvideoscreen.currentTime === 0){
+    //     progress.value = 0
+    // }else{
+    //     // progress.value = (getvideoscreen.currentTime / getvideoscreen.duration) * 100
+
+    //     progress.value = (currentTime / duration) * 100
+    // }
+    // progress.value = (getvideoscreen.currentTime / getvideoscreen.duration) * 100
+
+
+    // For progress container
+    if(getvideoscreen.currentTime === 0){
+        progress.style.width = '0%';
+    }else{
+        const progresspercent = (currentTime / duration) * 100;
+        progress.style.width = `${progresspercent}%`;
+    }
+
+    // progress.value = (getvideoscreen.currentTime / getvideoscreen.duration) * 100;
 
 
     let getmins = Math.floor(getvideoscreen.currentTime/60);
@@ -114,6 +168,17 @@ function updateprogress(){
 
 
     getdisplaytime.innerText = `${getmins}:${getsecs}`;
+
+
+    // Method 2 
+    // Noted: partStart(area(target length), startvalue(pad String))must be string data type 
+    // const minutevalue = getmins.toString().padStart(2, '0');
+    // const secondvalue = getsecs.toString().padStart(2, '0');
+
+    // console.log(minutevalue, secondvalue);
+    // console.log(typeof minutevalue, typeof secondvalue);
+
+    // getdisplaytime.innerText = `${minutevalue}:${secondvalue}`;
 
 
 }
@@ -154,11 +219,27 @@ function closefullscreen(){
 }
 
 
-function setprogress(){
+function setprogress(e){
     // console.log('hey');
     // console.log((progress.value*getvideoscreen.duration)/100);
 
-    getvideoscreen.currentTime = (progress.value*getvideoscreen.duration)/100;
+    // for range
+    // getvideoscreen.currentTime = (progress.value*getvideoscreen.duration)/100;
+
+
+    // for progress container
+    const getelewidth = this.clientWidth;
+    // console.log(getelewidth);
+
+    const getclickx = e.offsetX;
+    // console.log(getclickx);
+
+    const duration = getvideoscreen.duration;
+
+    getvideoscreen.currentTime = (getclickx/getelewidth) * duration;
+    // console.log(getvideoscreen.currentTime);
+
+    
 }
 
 
@@ -168,7 +249,14 @@ nextbtn.addEventListener('click',nextvdo);
 prevbtn.addEventListener('click',previousvdo);
 
 getvideoscreen.addEventListener('timeupdate',updateprogress);
-progress.addEventListener('click',setprogress);
+getvideoscreen.addEventListener('ended',nextvdo);
+getvideoscreen.addEventListener('click',playpausevdo);
+
+// for range
+// progress.addEventListener('click',setprogress);
+
+// for progress container
+getprogressctn.addEventListener('click',setprogress);
 
 getopenfullscreen.addEventListener('click',openfullscreen);
 getclosefullscreen.addEventListener('click',closefullscreen);
