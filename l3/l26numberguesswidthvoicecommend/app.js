@@ -8,6 +8,12 @@ const getbtn = document.querySelector('#btn');
 const message1 = document.querySelector('.message1');
 const message2 = document.querySelector('.message2');
 
+const getgamectn = document.getElementById('game-container');
+
+const getmicbtn = document.getElementById('mic-btn');
+
+const getvcctn = document.getElementById('voice-container');
+
 
 
 let min = 1,
@@ -23,6 +29,43 @@ maxnum.textContent = max;
 function randomnum(min,max){
     let getrdn = Math.random() * (max-min)+1;
 }
+
+// for Chrome Browser Support
+window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+let getrec = new window.SpeechRecognition;
+
+getmicbtn.addEventListener('click',function(){
+    // console.log(getrec);
+
+    // start recognition, start() come from recognition api
+    getrec.start();
+
+    getrec.addEventListener('result',(e)=>talking(e));
+})
+
+function talking(ele){
+    // console.log(ele);
+    const micresult = ele.results[0][0].transcript;
+    // console.log(micresult);
+
+    micmessage(micresult);
+    getnumber(micresult);
+}
+
+function micmessage(msg){
+    getvcctn.innerHTML = `
+        <span class="voicemessage">Did you say "${msg}"!</span>
+    `;
+}
+
+function getnumber(msg){
+    const getnum = +msg;
+
+    // console.log(typeof getnum);
+
+    getinput.value = getnum;
+}
+
 
 function setmessage1(msg,clr){
     message1.innerText = msg;
@@ -45,6 +88,8 @@ function gameover(won,msg){
     setmessage1(msg,color);
 
     getbtn.value = 'Play Again';
+
+    getbtn.classList.add('playagain');
 }
 
 getbtn.addEventListener('click',function(){
@@ -62,14 +107,34 @@ getbtn.addEventListener('click',function(){
 
     }else{
 
-        
+        gamelife--;
 
         if(gamelife === 0){
             // Game Over LOSE
+
+            gameover(false,`Game Over!, You Lost. The correct number is ${winningnum}`);
+
         }else{
             // Try Again
+
+            getinput.style.borderColor = 'red';
+
+            getinput.value = '';
+
+            setmessage1(`${guess} is not correct. ${gamelife} guess left.`,'blue');
+
         }
 
+    }
+
+})
+
+
+getgamectn.addEventListener('mousedown',function(e){
+    // console.log(e.target);
+
+    if(e.target.classList.contains('playagain')){
+        window.location.reload();
     }
 
 })
