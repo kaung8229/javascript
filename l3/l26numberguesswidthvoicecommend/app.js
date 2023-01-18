@@ -16,18 +16,21 @@ const getvcctn = document.getElementById('voice-container');
 
 
 
-let min = 1,
-max = 10,
+let min = 10,
+max = 100,
 gamelife = 3,
-// winningnum = randomnum(min,max);
-winningnum = 5;
+winningnum = randomnum(min,max);
+// winningnum = 5;
 
 minnum.innerText = min;
 maxnum.textContent = max;
 
+console.log(winningnum);
+
 
 function randomnum(min,max){
-    let getrdn = Math.random() * (max-min)+1;
+    let getrdn = Math.floor(Math.random() * (max-min)+10);
+    return getrdn;
 }
 
 // for Chrome Browser Support
@@ -63,7 +66,15 @@ function getnumber(msg){
 
     // console.log(typeof getnum);
 
+    if(Number.isNaN(getnum)){
+        getvcctn.innerHTML += `<div>This is not a valid number.</div>`;
+        return false;
+    }
+
     getinput.value = getnum;
+
+    // stop recognition, stop() come from recognition api
+    getrec.stop();
 }
 
 
@@ -105,6 +116,8 @@ getbtn.addEventListener('click',function(){
 
         gameover(true,`You won!! ${guess} is correct.`)
 
+        getvcctn.innerHTML = '';
+
     }else{
 
         gamelife--;
@@ -122,6 +135,12 @@ getbtn.addEventListener('click',function(){
             getinput.value = '';
 
             setmessage1(`${guess} is not correct. ${gamelife} guess left.`,'blue');
+
+            if(guess > winningnum){
+                getvcctn.innerHTML += `<div>You should go down a bit.</div>`;
+            }else if(guess < winningnum){
+                getvcctn.innerHTML += `<div>You should go up a bit.</div>`;
+            }
 
         }
 
