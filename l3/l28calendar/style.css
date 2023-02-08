@@ -1,0 +1,93 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    font-family:sans-serif;
+    height:100vh;
+
+    display:grid;
+    justify-items:center;
+    align-content:center;
+
+    margin:0;
+    padding:0;
+}
+
+.container{
+    width: 700px;
+    background: #f4f4f4;
+    padding: 20px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+}
+
+.btn{
+    width: 20%;
+    background: steelblue;
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: background-color .3s;
+}
+.btn:hover{
+    background: darkblue;
+}
+
+.month-btn,.year-btn{
+    position: relative;
+}
+
+.dropdown{
+    width: 140px;
+    background: #fff;
+    color: #333;
+    font-size: 17px;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+
+    position: absolute;
+    left: 0;
+
+    overflow: hidden;
+}
+
+.dropdown .dropdown-item{
+    padding: 5px 0;
+    cursor: pointer;
+    opacity: 0.8;
+
+    transition: all .2s;
+}
+
+.dropdown .dropdown-item:hover{
+    background: steelblue;
+    color: #fff;
+    opacity: 1;
+}
+
+
+.days .dayname{
+    background-color: steelblue;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.caldays .day{
+    width: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    /* padding: 10px 20px; */
+}
+
+
+
+
+
+
+
