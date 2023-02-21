@@ -62,7 +62,13 @@ body{
     position: absolute;
     left: 0;
 
+    display: none;
+
     overflow: hidden;
+}
+
+.dropdown.show{
+    display: block;
 }
 
 .dropdown .dropdown-item{
@@ -89,7 +95,7 @@ body{
 }
 
 .caldates .days .day{
-    width: 10%;
+    width: 13%;
     font-size: 18px;
     text-align: center;
     border-radius: 10px;
