@@ -48,13 +48,26 @@ function initmonth(){
         newdiv.textContent = months[x];
         newdiv.classList.add('dropdown-item');
 
-        newdiv.onclick = (function(){
-            // console.log('hey');
+        // newdiv.onclick = (function(){
+        //     // console.log('hey');
 
-            return function(){
-                initdays();
-            }
-        })()
+        //     return function(){
+        //         initdays();
+        //     }
+        // })();
+
+        // newdiv.addEventListener('click',function(){
+            // console.log(this);
+            // console.log(this.textContent);
+
+            // console.log(x); // 12
+        // })
+
+        // newdiv.onclick = (function(){
+            // console.log(x);
+        // })();
+
+        newdiv.onclick = selectmonth(x);
 
         getddmonth.appendChild(newdiv);
     }
@@ -72,11 +85,36 @@ function inityear(){
         newdiv.innerText = i;
         newdiv.className = 'dropdown-item';
 
+        newdiv.onclick = (function(){
+            var allidx = i;
+            // console.log(allidx); //2020 to 2030
+
+            return function(){
+                year = allidx;
+                // console.log(year);
+                getcuryear.textContent = year;
+                initdays();
+            }
+        })()
+
         // console.log(newdiv);
         getddyear.appendChild(newdiv);
     }
-
 }
+
+function selectmonth(num){
+    // console.log(num);
+
+    var allidx = num; // 0 to 11
+
+    return function(){
+        month = allidx;
+        // console.log(month);
+        getcurmonth.textContent = months[month];
+        initdays();
+    }
+}
+
 
 function initdays(){
     getcaldays.innerHTML = '';
@@ -148,7 +186,6 @@ getyearbtn.addEventListener('click',function(){
     }
 
 })
-
 
 
 

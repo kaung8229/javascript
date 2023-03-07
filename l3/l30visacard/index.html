@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Visa Card</title>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+        <link href="./style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        
+    <div class="container">
+        <div class="visacard">
+
+            <form action="" method="">
+
+                <div class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" class="logo" alt="">
+                </div>
+
+                <div class="card-number">
+                    <label for="card-digit">Card Number</label>
+                    <input type="text" name="card-digit" id="card-digit" class="form-control" placeholder="1234 1234 1234 1234" maxlength="18" required />
+                    <span class="underline"></span>
+                </div>
+
+                <br/><br/>
+
+                <div class="form-group">
+                    
+                    <div class="card-holder">
+                        <label for="card-name">Card Holder Name</label>
+                        <input type="text" name="card-name" id="card-name" class="form-control" placeholder="Enter your full name" maxlength="5" required />
+                        <span class="underline"></span>
+                    </div>
+
+                    <div class="card-date">
+                        <label for="card-exp">Exp. Date</label>
+                        <input type="text" name="card-exp" id="card-exp" class="form-control" placeholder="12/30" maxlength="5" required />
+                        <span class="underline"></span>
+                    </div>
+
+                    <div class="card-code">
+                        <label for="card-ccv">CCV</label>
+                        <input type="text" name="card-ccv" id="card-ccv" class="form-control" placeholder="135" maxlength="3" required />
+                        <span class="underline"></span>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="./app.js" type="text/javascript"></script>
+    </body>
+</html>

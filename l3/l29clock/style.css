@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    user-select: none;
+}
+
+body{
+    font-family:sans-serif;
+    height:100vh;
+    background: #f4f4f4;
+
+    display:grid;
+    place-items: center;
+}
+
+.clock{
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.clock-pannel{
+    width: inherit;
+    height: inherit;
+    background: #333;
+    border: 10px solid silver;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.2);
+}
+.clock-face{
+    color: #fff;
+}
+
+.clock-face-item{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    transform-origin: 50% 140px;
+}
+
+.num12{ transform: translateX(-50%) rotate(0deg); }
+.num1{ transform: translateX(-50%) rotate(30deg); }
+.num2{ transform: translateX(-50%) rotate(60deg); }
+.num3{ transform: translateX(-50%) rotate(90deg); }
+.num4{ transform: translateX(-50%) rotate(120deg); }
+.num5{ transform: translateX(-50%) rotate(150deg); }
+.num6{ transform: translateX(-50%) rotate(180deg); }
+.num7{ transform: translateX(-50%) rotate(210deg); }
+.num8{ transform: translateX(-50%) rotate(240deg); }
+.num9{ transform: translateX(-50%) rotate(270deg); }
+.num10{ transform: translateX(-50%) rotate(300deg); }
+.num11{ transform: translateX(-50%) rotate(330deg); }
+
+
+
+
+.clock-face-hand-item{
+    position: absolute;
+}
+
+.clock-face-hand-item.hour{
+
+    --myrotation: 320;
+
+    width: 4px;
+    height: 60px;
+    background: #fff;
+    border-radius: 10px;
+
+    top: 90px;
+    left: 148px;
+
+    /* transform: rotate(320deg); */
+    transform: rotate( calc(var(--myrotation) * 1deg) );
+    transform-origin: bottom;
+}
+
+.clock-face-hand-item.minute{
+
+    --myrotation: 50;
+
+    width: 4px;
+    height: 120px;
+    background: #fff;
+    border-radius: 10px;
+
+    top: 30px;
+    left: 148px;
+
+    /* transform: rotate(50deg); */
+    transform: rotate( calc(var(--myrotation) * 1deg) );
+    transform-origin: bottom;
+}
+
+.clock-face-hand-item.second{
+
+    --myrotation: 200;
+
+    width: 3px;
+    height: 145px;
+    background: steelblue;
+    border-radius: 10px;
+
+    top: 20px;
+    left: 148px;
+
+    /* transform: rotate(200deg); */
+    transform: rotate( calc(var(--myrotation) * 1deg) );
+    transform-origin: 50% 130px;
+}
+
+
+
+
+
+
+
+
